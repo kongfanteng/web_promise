@@ -40,10 +40,10 @@ Promise.prototype.then = function (onfulfilled, onrejected) {
     onrejected(self.reason)
   }
   if (self.status === 'pendding') {
-    this.onResolveCallbacks.push(function(){
+    self.onResolveCallbacks.push(function(){
       onfulfilled(self.value)
     })
-    this.onRejectCallbacks.push(function(){
+    self.onRejectCallbacks.push(function(){
       onrejected(self.reason)
     })
   }

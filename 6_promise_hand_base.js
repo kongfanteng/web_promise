@@ -68,10 +68,10 @@
     self.onRejectCallbacks = [] // 存放失败的回调
     // - - then 函数：状态为 pendding 状态时，存放失败或成功方法
     if (self.status === 'pendding') {
-      this.onResolveCallbacks.push(function(){
+      self.onResolveCallbacks.push(function(){
         onfulfilled(self.value)
       })
-      this.onRejectCallbacks.push(function(){
+      self.onRejectCallbacks.push(function(){
         onrejected(self.reason)
       })
     }
